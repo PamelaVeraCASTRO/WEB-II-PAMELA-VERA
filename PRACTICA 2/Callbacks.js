@@ -26,7 +26,7 @@ function busquedaRegistroporID(id,callback)
     return callback(null, registro);
 }
 
-busquedaIdiomaporID(2,  (err, idioma)=>{
+busquedaIdiomaporID(1,  (err, idioma)=>{
     if (err)
     {
         console.log(err.message);
