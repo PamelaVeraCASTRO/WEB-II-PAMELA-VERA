@@ -9,14 +9,14 @@ const PUERTO =  5000;
 app.use(cors()).use(express.json())
 app.use('/public', express.static(__dirname+'/public') )
 
-//GET - Obtener todos los deportistas
+//GET - Obtener todos los idiomas
 app.get('/idiomas', (req,res)=>{
     res.status(200).send(
         idiomas
     );
 })
 
-//GET - Obtener un deportista por su ID
+//GET - Obtener un idioma por su ID
 app.get('/idiomas/:id', (req, res) => {
     const idioma = idiomas.find(d => d.id === parseInt(req.params.id));
     if (!idioma) {
@@ -26,7 +26,7 @@ app.get('/idiomas/:id', (req, res) => {
     res.send(idioma);
 });
 
-//POST - Crear/Insertar un nuevo deportista
+//POST - Crear/Insertar un nuevo idioma
 app.post('/idiomas/insertar', (req,res)=>{
     const {body} = req;
     idiomas.push(body);
@@ -36,7 +36,7 @@ app.post('/idiomas/insertar', (req,res)=>{
     });
 });
 
-//PUT - Modificar un deportista por su ID
+//PUT - Modificar un idioma por su ID
 app.put('/idiomas/modificar/:id', (req,res)=>{
     const {id, descripcion} = req.body;
     
@@ -52,7 +52,7 @@ app.put('/idiomas/modificar/:id', (req,res)=>{
     );
 });
 
-//DELETE - Eliminar un deportista por su ID
+//DELETE - Eliminar un idioma por su ID
 app.delete('/idiomas/eliminar/:id', (req, res) => {
     const index = idiomas.findIndex(d => d.id === parseInt(req.params.id));
     if (index === -1) {
