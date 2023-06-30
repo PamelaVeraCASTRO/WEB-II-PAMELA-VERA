@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  api:
+    build: .
+    depends_on:
+      - mongo
+    environment:
+      - PORT=2500
+      - MONGO_CNN=mongodb://database:27017/test
+    ports:
+      - "2500:2500"
+
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
