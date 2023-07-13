@@ -1,0 +1,27 @@
+<p>CRUD</p>
+<p>Ingrese Idioma</p>
+<div>  
+    <form #loginForm="ngForm" (ngSubmit)="submitData(loginForm.value)">
+      <div class="main">
+        <div class="input-fields">
+          <input name="descripcion" ngModel placeholder="descripcion" id="descripcion" type="text" class="input-field" />
+        </div>
+        <button>Create Data </button>
+      </div>
+    </form>
+    <table border="1">
+      <thead>
+        <th>id</th>
+        <th>Descripcion</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let idioma of dataIdiomas.idiomas">
+          <td>{{idioma._id}}</td>
+          <td>{{idioma.descripcion}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  
+  <router-outlet></router-outlet>

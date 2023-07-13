@@ -1,0 +1,32 @@
+<p>CRUD</p>
+<p>Ingrese Palabra</p>
+<div>  
+    <form #loginForm="ngForm" (ngSubmit)="submitData(loginForm.value)">
+      <div class="main">
+        <div class="input-fields">
+          <input name="palabra" ngModel placeholder="palabra" id="palabra" type="text" class="input-field" />
+        </div>
+        <div class="input-fields">
+            <input name="deletreo" ngModel placeholder="deletreo" id="deletreo" type="text" class="input-field" />
+          </div>
+        <button>Create Data </button>
+      </div>
+    </form>
+    <table border="1">
+      <thead>
+        <th>id</th>
+        <th>Palabra</th>
+        <th>Deletreo</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let palabra of dataPalabras.Palabras">
+          <td>{{palabra._id}}</td>
+          <td>{{palabra.palabra}}</td>
+          <td>{{palabra.deletreo}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  
+  <router-outlet></router-outlet>
